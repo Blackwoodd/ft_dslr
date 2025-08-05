@@ -15,7 +15,7 @@ def percentile(values, p):
     else:
         return values[f] * (c - k) + values[c] * (k - f)
 
-def ecart_type(values):
+def standard_deviation(values):
     n = len(values)
     mean = sum(values) / n
     variance = sum((x - mean) ** 2 for x in values) / n
@@ -49,7 +49,7 @@ def describe_csv(file_path):
         mean = sum(values) / len(values)
         max_val = max(values)
         min_value = min(values)
-        std = ecart_type(values)
+        std = standard_deviation(values)
         median = percentile(values, 0.5)
         q1 = percentile(values, 0.25)
         q3 = percentile(values, 0.75)
